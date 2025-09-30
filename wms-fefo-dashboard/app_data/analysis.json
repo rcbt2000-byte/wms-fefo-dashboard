@@ -1,0 +1,103 @@
+{
+  "timestamp": "2025-09-30T01:23:45",
+  "cards": {
+    "Total FEFO Violations": 0,
+    "LT22 Rows": 503,
+    "Unique Materials (LT22)": 68,
+    "Min/Max SLED (LT22)": "2025-10-04 \u2192 2028-06-21"
+  },
+  "tables": {
+    "Inventory by Expiry Bucket (LX03)": [
+      {
+        "EXP_BUCKET": "Expired/Past Due",
+        "Total_Stock": 2622472.8
+      },
+      {
+        "EXP_BUCKET": "0-30",
+        "Total_Stock": 656942.532
+      },
+      {
+        "EXP_BUCKET": "31-60",
+        "Total_Stock": 547381.968
+      },
+      {
+        "EXP_BUCKET": "61-90",
+        "Total_Stock": 1620013.348
+      },
+      {
+        "EXP_BUCKET": "91-150",
+        "Total_Stock": 2112235.263
+      },
+      {
+        "EXP_BUCKET": "150+",
+        "Total_Stock": 23836105.637
+      },
+      {
+        "EXP_BUCKET": "Unknown",
+        "Total_Stock": 57004569.808000006
+      }
+    ],
+    "Top Risk Materials (\u226460 days)": [
+      {
+        "Material": 1011157.0,
+        "Total_Stock_<=60d": 182400.0
+      },
+      {
+        "Material": 10044446.0,
+        "Total_Stock_<=60d": 79305.0
+      },
+      {
+        "Material": 10017015.0,
+        "Total_Stock_<=60d": 73400.0
+      },
+      {
+        "Material": 1020067.0,
+        "Total_Stock_<=60d": 73000.0
+      },
+      {
+        "Material": 1013891.0,
+        "Total_Stock_<=60d": 64400.0
+      },
+      {
+        "Material": 1010925.0,
+        "Total_Stock_<=60d": 56248.0
+      },
+      {
+        "Material": 10040826.0,
+        "Total_Stock_<=60d": 55710.0
+      },
+      {
+        "Material": 10097711.0,
+        "Total_Stock_<=60d": 45100.0
+      },
+      {
+        "Material": 10006961.0,
+        "Total_Stock_<=60d": 40241.0
+      },
+      {
+        "Material": 10007495.0,
+        "Total_Stock_<=60d": 34800.0
+      },
+      {
+        "Material": 1024435.0,
+        "Total_Stock_<=60d": 33661.0
+      },
+      {
+        "Material": 10011391.0,
+        "Total_Stock_<=60d": 30014.0
+      },
+      {
+        "Material": 10006810.0,
+        "Total_Stock_<=60d": 29961.0
+      },
+      {
+        "Material": 1016043.0,
+        "Total_Stock_<=60d": 28900.0
+      },
+      {
+        "Material": 10125345.0,
+        "Total_Stock_<=60d": 28550.0
+      }
+    ]
+  }
+}

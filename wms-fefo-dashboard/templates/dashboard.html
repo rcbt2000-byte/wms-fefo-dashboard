@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="panel">
+  <h2>Upload Latest SAP Extracts</h2>
+  <form method="post" action="{{ url_for('upload') }}" enctype="multipart/form-data" class="upload-form">
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <label>LT22 (RSVLFEFO Variant): <input type="file" name="lt22" required></label>
+      <label>LX03 (RSVLFEFO Variant): <input type="file" name="lx03" required></label>
+      <button type="submit">Process</button>
+    </div>
+  </form>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul class="messages">{% for m in messages %}<li>{{ m }}</li>{% endfor %}</ul>
+  {% endif %}
+  {% endwith %}
+</div>
+
+{% if results %}
+  <div class="cards">
+    {% for label, value in results.cards.items() %}
+    <div class="card">
+      <div class="card-label">{{ label }}</div>
+      <div class="card-value">{{ value }}</div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="panel">
+    <h2>FEFO Overview</h2>
+    <div class="charts">
+      {% for c in charts %}
+        <img src="{{ url_for('static', filename=c) }}" alt="chart" />
+      {% else %}
+        <p>No charts available yet. Upload files to generate.</p>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Tables</h2>
+    {% for title, rows in results.tables.items() %}
+      <h3>{{ title }}</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            {% if rows and rows|length > 0 %}
+              <tr>
+                {% for k,v in rows[0].items() %}<th>{{ k }}</th>{% endfor %}
+              </tr>
+            {% endif %}
+          </thead>
+          <tbody>
+            {% for r in rows %}
+              <tr>
+                {% for k,v in r.items() %}<td>{{ v }}</td>{% endfor %}
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p>No tables yet. Upload files to compute analysis.</p>
+    {% endfor %}
+  </div>
+
+  <div class="panel">
+    <h2>Pick Priority</h2>
+    {% if pick_csv %}
+      <a class="btn" href="{{ url_for('download', fname='pick_priority.csv') }}">Download pick_priority.csv</a>
+    {% else %}
+      <p>No pick list yet (generate after a successful upload).</p>
+    {% endif %}
+  </div>
+{% else %}
+  <div class="panel">
+    <p>Upload LT22 & LX03 to generate the FEFO dashboard.</p>
+  </div>
+{% endif %}
+
+{% endblock %}

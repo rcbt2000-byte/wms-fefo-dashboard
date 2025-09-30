@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WMS • Inventory (FEFO)</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">WMS ▸ Inventory (FEFO)</div>
+    <nav>
+      <a href="/dashboard">Dashboard</a>
+    </nav>
+    <div class="meta">{{ (results.timestamp if results) or '' }}</div>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

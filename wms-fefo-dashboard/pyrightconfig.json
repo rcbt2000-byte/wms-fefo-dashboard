@@ -1,0 +1,14 @@
+{
+  "include": ["**/*.py"],
+  "exclude": ["**/__pycache__", "**/.*"],
+  "pythonVersion": "3.11",
+  "pythonPlatform": "Linux",
+  "typeCheckingMode": "basic",
+  "useLibraryCodeForTypes": true,
+  "autoSearchPaths": true,
+  "autoImportCompletions": true,
+  "extraPaths": [
+    ".",
+    ".pythonlibs/lib/python3.11/site-packages"
+  ]
+}
